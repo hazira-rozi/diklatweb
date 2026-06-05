@@ -40,15 +40,23 @@
                     </div>
                 </form>
                 <?php
-                if (isset($_POST['submit_nama'])) {
-                    $cari = trim($_POST['nama_barang']);
-                    if (in_array(strtolower($cari), $perangkat)) {
-                        echo "<div class='alert alert-success mt-2'>Barang '$cari' <strong>Ditemukan</strong>.</div>";
-                    } else {
-                        echo "<div class='alert alert-danger mt-2'>Barang '$cari' <strong>Tidak Ditemukan</strong>.</div>";
-                    }
-                }
-                ?>
+if (isset($_POST['submit_nama'])) {
+    $cari = trim($_POST['nama_barang']);
+    
+    // Cek terlebih dahulu apakah barang ada di dalam array
+    if (in_array(strtolower($cari), $perangkat)) {
+        
+        // Jika barang ada, cari nomor index-nya dan simpan ke variabel
+        $index_ditemukan = array_search(strtolower($cari), $perangkat);
+        
+        // Tampilkan index yang sudah ditemukan
+        echo "<div class='alert alert-success mt-2'>Barang '$cari' <strong>Ditemukan</strong> pada index ke-" . $index_ditemukan . ".</div>";
+        
+    } else {
+        echo "<div class='alert alert-danger mt-2'>Barang '$cari' <strong>Tidak Ditemukan</strong>.</div>";
+    }
+}
+?>
             </div>
         </div>
     </div>

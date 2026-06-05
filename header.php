@@ -7,7 +7,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas PHP & Bootstrap</title>
+    <title>Tugas PHP Dasar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; }
@@ -24,6 +24,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         
         <nav class="col-md-3 col-lg-2 d-md-block sidebar py-4 px-2 position-fixed">
             <h4 class="text-white text-center mb-4">Menu Tugas</h4>
+            <hr class="border-white opacity-100">
             <ul class="nav flex-column">
                 <li class="nav-item mb-1">
                     <a class="nav-link <?= $current_page == 'index.php' ? 'active' : '' ?>" href="index.php">🏠 Home</a>
@@ -41,6 +42,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <a class="nav-link <?= $current_page == 'tugas4.php' ? 'active' : '' ?>" href="tugas4.php">📊 Tugas 4 (Nilai)</a>
                 </li>
             </ul>
+            <hr class="border-white opacity-100">
+            <h4 class="text-white text-center mb-4">Kelompok 4</h4>
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 content">
