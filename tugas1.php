@@ -4,13 +4,16 @@ include 'header.php';
 // Fungsi bantuan untuk mengecek bilangan prima
 function isPrima($angka) {
     if ($angka < 2) return false;
-    for ($i = 2; $i <= sqrt($angka); $i++) {
+    for ($i = 2; $i*$i <= $angka; $i++) {
         if ($angka % $i == 0) return false;
     }
     return true;
 }
 
-$ganjil = []; $genap = []; $prima = []; $kel_11 = [];
+$ganjil = []; 
+$genap = []; 
+$prima = []; 
+$kel_11 = [];
 for ($i = 1; $i <= 100; $i++) {
     if ($i % 2 !== 0) $ganjil[] = $i;
     if ($i % 2 === 0) $genap[] = $i;
